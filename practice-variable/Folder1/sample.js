@@ -22,8 +22,21 @@
 // ※constでは再代入はできない
 
 // varによる再代入
-var nickname = "taro"
-console.log(nickname)
-nickname = "Jiro"
-console.log(nickname)
+// var nickname = "taro"
+// console.log(nickname)
+// nickname = "Jiro"
+// console.log(nickname)
 
+// letによる再代入
+// let nickname = "taro"
+// console.log(nickname)
+// nickname = "Jiro"
+// console.log(nickname)
+
+// constによる再代入
+// const nickname = "taro"
+// console.log(nickname)
+// nickname = "Jiro"
+// console.log(nickname)
+
+// スコープとは？
