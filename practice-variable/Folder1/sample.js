@@ -39,4 +39,19 @@
 // nickname = "Jiro"
 // console.log(nickname)
 
-// スコープとは？
+// スコープについて
+// グローバルスコープとローカルスコープがある
+
+// varのスコープ
+// varでは関数スコープ(ローカルスコープ)、グローバルスコープの変数を宣言できる
+
+var str = "webcamp" //グローバルスコープ
+
+function foo() {
+  console.log(str)
+  var y = "hello" //関数スコープ
+}
+
+foo()
+console.log(y)
+// 56行目の定義が間違っていた場合検証ツールでもエラーが確認できる
