@@ -45,13 +45,35 @@
 // varのスコープ
 // varでは関数スコープ(ローカルスコープ)、グローバルスコープの変数を宣言できる
 
-var str = "webcamp" //グローバルスコープ
+// var str = "webcamp" //グローバルスコープ
 
-function foo() {
-  console.log(str)
-  var y = "hello" //関数スコープ
+// function foo() {
+  // console.log(str)
+  // var y = "hello" //関数スコープ
+// }
+
+// foo()
+// console.log(y)
+// 56行目の定義が間違っていた場合検証ツールでもエラーが確認できる
+
+// letのスコープ
+// 例１
+// function foo() {
+  // let x = "webcamp"
+  // {
+    // let y = "hello webcamp"
+  // }
+  // console.log(x)
+  // console.log(y)
+// }
+
+// foo()
+// ブロック外から参照したためエラーになる
+
+// 例２
+for (let i = 0; i < 10; i++) {
+  console.log(i)
 }
 
-foo()
-console.log(y)
-// 56行目の定義が間違っていた場合検証ツールでもエラーが確認できる
+console.log(i)
+// ブロック外から参照したためエラーになる
