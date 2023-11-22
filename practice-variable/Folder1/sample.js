@@ -80,12 +80,18 @@
 
 // constのスコープ
 
-var str = "webcamp"
+// var str = "webcamp"
 
-function foo() {
-  console.log(str)
-  var str = "dmm webcamp"
-  console.log(str)
+// function foo() {
+  // console.log(str)
+  // var str = "dmm webcamp"
+  // console.log(str)
+// }
+
+// foo()
+
+// 変数宣言の使い分け
+// 下記は、０〜９までをループによってコンソールに出力するコードである
+for (let i = 0; i < 10; i++) {
+  console.log(i);
 }
-
-foo()
