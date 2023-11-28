@@ -20,13 +20,22 @@
 // ※この状態のままだと関数を作成しただけなので、18行目の関数を利用する処理を下記に記述し追加する。
 
 // メイン部分
-let alertString;
+// let alertString;
 // 作成した関数を呼び出し、変数へ格納
-alertString = addString("WebCamp");
+// alertString = addString("WebCamp");
 // 変数の中身をアラートで表示する
-alert(alertString);
+// alert(alertString);
 // 作成した関数
-function addString(strA){
-  let addStr = "Hello " + strA;
-  return addStr;
-}
+// function addString(strA){
+  // let addStr = "Hello " + strA;
+  // return addStr;
+// }
+
+// 複数の関数で表示出来るようにする
+// 入力ダイアログで値を入力する
+
+// メイン部分
+let promptStr = prompt('何か好きな文字を入力してください。');
+
+// 入力された文字列をアラートで表示
+alert(promptStr);
