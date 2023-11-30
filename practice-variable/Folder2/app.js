@@ -77,9 +77,24 @@ function getJShand(){
   let js_hand_num = Math.floor( Math.rabdom() ＊ 3 );
   let hand_name;
 
-  if(js)
-  
-  
-  
+  if(js_hand_num == 0){
+    hand_name = "グー";
+  } else if(js_hand_num == 1){
+    hand_name = "チョキ";
+  } else if(js_hand_num == 2){
+    hand_name = "パー";
+  }
+
+  return hand_name;
+}
+// ユーザの手とJavaScriptのじゃんけんの手を比べる関数
+function winLose(user, js){
+  let winLoseStr;
+
+  if(user == "グー"){
+    if(js == "グー"){
+      winLoseStr = "あいこ"
+    }
+  }
 }
 
