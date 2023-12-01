@@ -65,18 +65,98 @@
 // 下記の内容がその記述です。
 
 // じゃんけんの手を入力してもらうプロンプト欄を生成
-let user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んで下さい。');
+// let user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んで下さい。');
 // じゃんけんの手をランダムに作成する関数を呼び出す
-let js_hand = getJShand();
+// let js_hand = getJShand();
 // ユーザの手とjavaScriptのじゃんけんの手を比べる関数を呼び出し、結果をjudgeに入れる
-let judge = winLose(user_hand, js_hand);
+// let judge = winLose(user_hand, js_hand);
 // 結果を表示する
-alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
+// alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
+
+// ランダムでじゃんけんの手を作成する関数
+// function getJShand() {
+  // let js_hand_num = Math.floor(Math.random() * 3);
+  // let hand_name;
+
+  // if (js_hand_num == 0) {
+    // hand_name = "グー";
+  // } else if (js_hand_num == 1) {
+    // hand_name = "チョキ";
+  // } else if (js_hand_num == 2) {
+    // hand_name = "パー";
+  // }
+
+  // return hand_name;
+// }
+
+/* ユーザの手とJavaScriptのじゃんけんの手を比べる関数
+// function winLose(user, js) {
+  // let winLoseStr;
+
+  // if (user == "グー") {
+    // if (js == "グー") {
+      // winLoseStr = "あいこ";
+    // } else if (js == "チョキ") {
+      // winLoseStr = "勝ち";
+    /*} else if (js == "パー") {
+      winLoseStr = "負け";
+    }
+  } else if (user == "チョキ") {
+    if (js == "グー") {
+      winLoseStr = "負け";
+    } else if (js == "チョキ") {
+      winLoseStr = "あいこ";
+    } else if (js == "パー") {
+      winLoseStr = "勝ち";
+    }
+  } else if (user == "パー") {
+    if (js == "グー") {
+      winLoseStr = "勝ち";
+    } else if (js == "チョキ") {
+      winLoseStr = "負け";
+    } else if (js == "パー") {
+      winLoseStr = "あいこ";
+    }
+  }
+
+  // return winLoseStr;
+ }*/
+
+// 確認問題
+// 上記のじゃんけんプログラムに次の機能を追加して下さい。
+// 1:グー・チョキ・パー以外の文字列が入力された時に、「グー・チョキ・パーのいずれかを入力して下さい。」とアラートウィンドウにエラーが表示されるように設定して下さい。
+// 2:アラートウィンドウでエラーが表示された後、もう一度、プロンプト入力欄が表示出来るように設定して下さい。
+// 3:キャンセルボタンが押された時は、「またチャレンジしてね」というアラートメッセージが出力されるように設定して下さい。
+// ヒント：キャンセルボタンの判定には、nullを用います。
+let user_hand;
+// ユーザの入力がグー・チョキ・パーであるか確認するループ
+while (true) {
+    user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んで下さい。');
+  // キャンセルボタンが押された時
+  if (user_hand === null) {
+    alert('またチャレンジしてね');
+    break;
+  }
+  // グー・チョキ・パー以外の文字列が入力された時
+  if (user_hand !== "グー" && user_hand !== "チョキ" && user_hand !== "パー") {
+    alert('グー、チョキ、パーのいずれを入力して下さい。');
+  } else {
+    break; // 正しい入力があった場合はループを抜ける
+  }
+
+}
+
+if (user_hand !== null) {
+  let js_hand = getJShand();
+  let judge = winLose(user_hand, js_hand);
+
+  alert('あなたの選んだ手は' + user_hand + 'です。\nJavaScriptの選んだ手は' + js_hand + 'です。\n結果は' + judge + 'です。');
+}
 
 // ランダムでじゃんけんの手を作成する関数
 function getJShand() {
   let js_hand_num = Math.floor(Math.random() * 3);
-  let hand_name;
+  let js_hand_name;
 
   if (js_hand_num == 0) {
     hand_name = "グー";
@@ -88,10 +168,9 @@ function getJShand() {
 
   return hand_name;
 }
-
 // ユーザの手とJavaScriptのじゃんけんの手を比べる関数
 function winLose(user, js) {
-  let winLoseStr;
+  let winLoseTtr;
 
   if (user == "グー") {
     if (js == "グー") {
@@ -121,28 +200,3 @@ function winLose(user, js) {
 
   return winLoseStr;
 }
-
-// 上記のじゃんけんプログラムに次の機能を追加して下さい。
-// 1:グー・チョキ・パー以外の文字列が入力された時に、「グー・チョキ・パーのいずれかを入力して下さい。」とアラートウィンドウにエラーが表示されるように設定して下さい。
-// 2:アラートウィンドウでエラーが表示された後、もう一度、プロンプト入力欄が表示出来るように設定して下さい。
-// 3:キャンセルボタンが押された時は、「またチャレンジしてね」というアラートメッセージが出力されるように設定して下さい。
-// ヒント：キャンセルボタンの判定には、nullを用います。
-let user_hand;
-// ユーザの入力がグー・チョキ・パーであるか確認するループ
-while (true) {
-    user_hand = prompt('じゃんけんの手をグー、チョキ、パーから選んで下さい。');
-  // キャンセルボタンが押された時
-  if (user_hand === null) {
-    alert('またチャレンジしてね');
-    break;
-  }
-  // グー・チョキ・パー以外の文字列が入力された時
-  if (user_hand !== "グー" && user_hand !== "チョキ" && user_hand !== "パー") {
-    alert('グー、チョキ、パーのいずれを入力して下さい。');
-  } else {
-    break; // 正しい入力があった場合はループを抜ける
-  }
-
-}
-
-if
