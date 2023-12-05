@@ -1,5 +1,14 @@
+/* ※上から下へスライドさせる記述
 .box1 {
   display: none;
+  background-color: #FF0000;
+  height: 200px;
+  width: 200px;
+}
+*/
+/* 下から上へスライドさせる記述 */
+
+.box1 {
   background-color: #FF0000;
   height: 200px;
   width: 200px;
