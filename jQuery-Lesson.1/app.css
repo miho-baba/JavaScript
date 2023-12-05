@@ -6,10 +6,17 @@
   width: 200px;
 }
 */
-/* 下から上へスライドさせる記述 */
+/* 下から上へスライドさせる記述
 
 .box1 {
   background-color: #FF0000;
+  height: 200px;
+  width: 200px;
+}
+*/
+/* 非表示の要素をjQueryで表示させる記述 */
+.box1 {
+  display: none;  background-color: #FF0000;
   height: 200px;
   width: 200px;
 }
